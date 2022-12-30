@@ -27,15 +27,12 @@ const Article = () => {
           <Col className="square border-dark border-bottom">
             <h3>{dataStory.title}</h3>
             <p>{dataStory.abstract}</p>
-          </Col>
-          <Col className="square border-dark border-bottom">
             <img
               className="mb-3"
               src={dataStory.multimedia[1].url}
               alt={indx}
             />
           </Col>
-          <Col></Col>
         </Row>
       </Container>
     );

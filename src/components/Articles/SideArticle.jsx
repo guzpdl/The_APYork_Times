@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import MostPopularAxios from "../../services/mostPopular.service";
-import { Container } from "react-bootstrap";
+import { Container, Image } from "react-bootstrap";
 
 const SideArticle = () => {
   const mostPopularAxios = new MostPopularAxios();
@@ -24,6 +24,7 @@ const SideArticle = () => {
   return popularStories.map((popularStory, index) => {
     return (
       <Container>
+        {/* <Image src={popularStory.media[0]["media-metadata"][0].url} fluid /> */}
         {/* <img src={popularStory.media[0]["media-metadata"][0].url} alt={index} /> */}
         <h3>{popularStory.title}</h3>
         <p>{popularStory.abstract}</p>
