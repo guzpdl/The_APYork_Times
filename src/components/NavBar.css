@@ -6,3 +6,7 @@
   border-style: double;
   border-color: black;
 }
+
+.links {
+  color: black !important;
+}

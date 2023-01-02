@@ -1,4 +1,5 @@
 import React from "react";
+import "./TwoColumnArticle.css";
 import { Figure } from "react-bootstrap";
 
 const TwoColumnArticle1 = ({ popularStories }) => {
