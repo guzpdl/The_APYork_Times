@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { Container, Row, Col, Image } from "react-bootstrap";
 import TopStoriesAxios from "../../services/topStories.service";
 
+// Front News from TNYT
+
 const Article = () => {
   const topStoriesAxios = new TopStoriesAxios();
 
@@ -22,7 +24,7 @@ const Article = () => {
 
   return topStories.map((dataStory, indx) => {
     return (
-      <Container className="m-3 square border-dark border-bottom" key={indx}>
+      <Container className="m-3 square border-dark border-bottom " key={indx}>
         <Row>
           <Col className="text-start">
             <h3>{dataStory.title}</h3>

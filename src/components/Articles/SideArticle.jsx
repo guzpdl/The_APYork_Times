@@ -4,6 +4,8 @@ import { Col, Container, Figure, Row } from "react-bootstrap";
 import TwoColumnArticle1 from "./TwoColumnArticle1";
 import TwoColumnArticle2 from "./TwoColumnArticle2";
 
+// Popular Articles from TNYT
+
 const SideArticle = () => {
   const mostPopularAxios = new MostPopularAxios();
 

@@ -20,27 +20,27 @@ const getCurrentDate = (separator = " ", comma = ", ") => {
       ? "Friday"
       : "Saturday"
   }${comma}${
-    month === 0
+    month === 1
       ? "January"
-      : month === 1
-      ? "February"
       : month === 2
-      ? "March"
+      ? "February"
       : month === 3
-      ? "April"
+      ? "March"
       : month === 4
-      ? "May"
+      ? "April"
       : month === 5
-      ? "June"
+      ? "May"
       : month === 6
-      ? "July"
+      ? "June"
       : month === 7
-      ? "August"
+      ? "July"
       : month === 8
-      ? "September"
+      ? "August"
       : month === 9
-      ? "October"
+      ? "September"
       : month === 10
+      ? "October"
+      : month === 11
       ? "November"
       : "December"
   }${separator}${date}${comma}${year}`;
