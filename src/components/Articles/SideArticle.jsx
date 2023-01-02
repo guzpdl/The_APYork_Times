@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import MostPopularAxios from "../../services/mostPopular.service";
-import { Container, Image } from "react-bootstrap";
+import { Col, Container, Figure, Row } from "react-bootstrap";
+import TwoColumnArticle1 from "./TwoColumnArticle1";
+import TwoColumnArticle2 from "./TwoColumnArticle2";
 
 const SideArticle = () => {
   const mostPopularAxios = new MostPopularAxios();
@@ -19,18 +21,18 @@ const SideArticle = () => {
     printPopularStories();
   }, []);
 
-  console.log(popularStories);
-
-  return popularStories.map((popularStory, index) => {
-    return (
-      <Container>
-        {/* <Image src={popularStory.media[0]["media-metadata"][0].url} fluid /> */}
-        {/* <img src={popularStory.media[0]["media-metadata"][0].url} alt={index} /> */}
-        <h3>{popularStory.title}</h3>
-        <p>{popularStory.abstract}</p>
-      </Container>
-    );
-  });
+  return (
+    <Container className="m-3 square border-start">
+      <Row className="square border-start">
+        <Col>
+          <TwoColumnArticle1 popularStories={popularStories} />
+        </Col>
+        <Col>
+          <TwoColumnArticle2 popularStories={popularStories} />
+        </Col>
+      </Row>
+    </Container>
+  );
 };
 
 export default SideArticle;

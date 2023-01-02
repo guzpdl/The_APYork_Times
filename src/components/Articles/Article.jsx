@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Image } from "react-bootstrap";
 import TopStoriesAxios from "../../services/topStories.service";
 
 const Article = () => {
@@ -12,7 +12,7 @@ const Article = () => {
     topStoriesAxios
       .homeStories()
       .then((topStoriesData) => {
-        setTopStories(topStoriesData.results);
+        setTopStories(topStoriesData.results.slice(0, 7));
       })
       .catch((error) => console.log(error));
   };
@@ -22,15 +22,18 @@ const Article = () => {
 
   return topStories.map((dataStory, indx) => {
     return (
-      <Container className="m-3 " key={indx}>
+      <Container className="m-3 square border-dark border-bottom" key={indx}>
         <Row>
-          <Col className="square border-dark border-bottom">
+          <Col className="text-start">
             <h3>{dataStory.title}</h3>
             <p>{dataStory.abstract}</p>
-            <img
+          </Col>
+          <Col>
+            <Image
               className="mb-3"
               src={dataStory.multimedia[1].url}
               alt={indx}
+              fluid
             />
           </Col>
         </Row>
