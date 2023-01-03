@@ -7,14 +7,20 @@ const NavBar = () => {
     <Container>
       <Navbar>
         <Nav className="m-auto">
-          <Nav.Link className="links" href="#home">
+          <Nav.Link className="links px-3" href="/">
             Home
           </Nav.Link>
-          <Nav.Link className="links" href="#features">
-            Features
+          <Nav.Link className="links px-3" href="/news">
+            News
           </Nav.Link>
-          <Nav.Link className="links" href="#pricing">
-            Pricing
+          <Nav.Link className="links px-3" href="/popular">
+            Popular Stories
+          </Nav.Link>
+          <Nav.Link className="links px-3" href="/books">
+            Books
+          </Nav.Link>
+          <Nav.Link className="links px-3" href="/movies">
+            Movies
           </Nav.Link>
         </Nav>
       </Navbar>

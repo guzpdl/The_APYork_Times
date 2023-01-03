@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { Container, Row, Col, Image } from "react-bootstrap";
-import TopStoriesAxios from "../../services/topStories.service";
+import TopStoriesAxios from "../../../services/topStories.service";
 
 // Front News from TNYT
 

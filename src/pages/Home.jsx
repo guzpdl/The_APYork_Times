@@ -1,7 +1,7 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import Article from "../components/Articles/Article";
-import SideArticle from "../components/Articles/SideArticle";
+import Article from "../components/Articles/HomeArticles/Article";
+import SideArticle from "../components/Articles/HomeArticles/SideArticle";
 
 const Home = () => {
   return (
