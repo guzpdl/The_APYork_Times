@@ -1,15 +1,11 @@
 import React from "react";
 import "./TwoColumnArticle.css";
-import { Figure } from "react-bootstrap";
+import { Col, Figure } from "react-bootstrap";
 
 const TwoColumnArticle1 = ({ popularStories }) => {
-  const half = Math.ceil(popularStories.length / 2);
-
-  let firstHalfPopStories = popularStories.slice(0, half);
-
-  return firstHalfPopStories.map((popularStory, index) => {
+  return popularStories.map((popularStory, index) => {
     return (
-      <div className="m-3 square border-bottom" key={index}>
+      <Col lg={5} className="m-2 square border-bottom" key={index}>
         <Figure>
           <Figure.Image
             src={
@@ -23,7 +19,7 @@ const TwoColumnArticle1 = ({ popularStories }) => {
             {popularStory.title}
           </Figure.Caption>
         </Figure>
-      </div>
+      </Col>
     );
   });
 };

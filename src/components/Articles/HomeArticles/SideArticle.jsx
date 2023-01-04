@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import MostPopularAxios from "../../../services/mostPopular.service";
-import { Col, Container, Figure, Row } from "react-bootstrap";
-import TwoColumnArticle1 from "./TwoColumnArticle1";
-import TwoColumnArticle2 from "./TwoColumnArticle2";
+import { Container, Row } from "react-bootstrap";
+import TwoColumnArticle1 from "./TwoColumnArticle";
 
 // Popular Articles from TNYT
 
@@ -24,14 +23,9 @@ const SideArticle = () => {
   }, []);
 
   return (
-    <Container className="m-3 square border-start">
+    <Container className="m-1 square border-start">
       <Row className="square border-start">
-        <Col>
-          <TwoColumnArticle1 popularStories={popularStories} />
-        </Col>
-        <Col>
-          <TwoColumnArticle2 popularStories={popularStories} />
-        </Col>
+        <TwoColumnArticle1 popularStories={popularStories} />
       </Row>
     </Container>
   );

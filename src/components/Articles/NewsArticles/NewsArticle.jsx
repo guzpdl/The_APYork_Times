@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Col, Row } from "react-bootstrap";
 import TopStoriesAxios from "../../../services/topStories.service";
 
 const NewsArticle = () => {
@@ -22,9 +23,9 @@ const NewsArticle = () => {
 
   return newStories.map((newsData, index) => {
     return (
-      <div>
+      <Col lg={4}>
         <h1>New Story</h1>
-      </div>
+      </Col>
     );
   });
 };

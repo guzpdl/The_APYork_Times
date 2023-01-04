@@ -11,7 +11,7 @@ const Home = () => {
           <Article />
         </Col>
         <Col>
-          <SideArticle />
+          <SideArticle lg={4} />
         </Col>
       </Row>
     </Container>

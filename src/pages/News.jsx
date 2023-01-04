@@ -6,9 +6,7 @@ const News = () => {
   return (
     <Container>
       <Row>
-        <Col>
-          <NewsArticle />
-        </Col>
+        <NewsArticle />
       </Row>
     </Container>
   );
