@@ -22,14 +22,20 @@ const NewsArticle = () => {
   return newStories.map((newsData, index) => {
     return (
       <Col lg={4} className="mt-3 d-flex justify-content-around" key={index}>
-        <Card className="m-2 text-start" style={{ width: "28rem" }}>
+        <Card
+          className="m-2 text-start d-flex flex-column "
+          style={{ width: "28rem" }}
+        >
           <Card.Link href={newsData.url} style={{ textDecoration: "none" }}>
-            <Card.Img variant="top" src={newsData.multimedia[1].url} />
+            <Card.Img
+              variant="top"
+              src={newsData.multimedia?.[1].url || "/nytDefaultImg.jpg"}
+            />
             <Card.Body style={{ color: "black" }}>
               <Card.Title>{newsData.title}</Card.Title>
               <Card.Text>{newsData.abstract}</Card.Text>
             </Card.Body>
-            <Card.Footer className="d-flex align-items-start flex-column">
+            <Card.Footer className="d-flex flex-column ">
               <small className="text-muted">{newsData.byline}</small>
               <small className="text-muted">{newsData.published_date}</small>
             </Card.Footer>

@@ -14,7 +14,7 @@ const Article = () => {
     topStoriesAxios
       .homeStories()
       .then((topStoriesData) => {
-        setTopStories(topStoriesData.results.slice(0, 7));
+        setTopStories(topStoriesData.results.slice(0, 8));
       })
       .catch((error) => console.log(error));
   };

@@ -10,7 +10,7 @@ const TwoColumnArticle1 = ({ popularStories }) => {
           <Figure.Image
             src={
               popularStory.media[0]?.["media-metadata"]?.[1].url ||
-              "/1zqk32z6zamtfubdkn39h7384chx.jpg"
+              "/nyt-sample-img.webp"
             }
             alt={index}
             fluid
