@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <Container className="square border-top mt-2">
       <Row>
-        <p className="mt-3">
+        <p className="mt-3 text-center">
           &copy; {new Date().getFullYear()} Developed by Guzmán Ponce de León
           using the The New York Times Company API{" "}
         </p>
