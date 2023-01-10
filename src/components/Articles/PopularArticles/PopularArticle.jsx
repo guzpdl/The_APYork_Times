@@ -14,15 +14,20 @@ const PopularArticle = ({ responsePopular }) => {
               "/nytDefaultImg.jpg"
             }
           />
-          <Card.Body style={{ color: "black" }}>
+        </Card.Link>
+        <Card.Body style={{ color: "black" }}>
+          <Card.Link
+            href={popularData.url}
+            style={{ textDecoration: "none", color: "black" }}
+          >
             <Card.Title>{popularData.title}</Card.Title>
             <Card.Text>{popularData.abstract}</Card.Text>
-          </Card.Body>
-          <Card.Footer className="d-flex flex-column ">
-            <small className="text-muted">{popularData.byline}</small>
-            <small className="text-muted">{popularData.published_date}</small>
-          </Card.Footer>
-        </Card.Link>
+          </Card.Link>
+        </Card.Body>
+        <Card.Footer className="d-flex flex-column ">
+          <small className="text-muted">{popularData.byline}</small>
+          <small className="text-muted">{popularData.published_date}</small>
+        </Card.Footer>
       </Card>
       // </Col>
     );

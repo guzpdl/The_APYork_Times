@@ -8,10 +8,10 @@ const Masthead = () => {
     <Container className="square border-bottom mt-4">
       <Row className="d-flex align-items-center">
         <Col>
-          <p className="">{getCurrentDate()}</p>
+          <p className="text-start ms-4">{getCurrentDate()}</p>
         </Col>
         <Col>
-          <h1 className="headerTitle">The APYork Times</h1>
+          <h1 className="headerTitle text-center">The APYork Times</h1>
         </Col>
         <Col></Col>
       </Row>

@@ -29,15 +29,20 @@ const NewsArticle = () => {
             src={newsData.multimedia?.[1].url || "/nytDefaultImg.jpg"}
             fluid
           />
-          <Card.Body style={{ color: "black" }}>
+        </Card.Link>
+        <Card.Body style={{ color: "black" }}>
+          <Card.Link
+            href={newsData.url}
+            style={{ textDecoration: "none", color: "black" }}
+          >
             <Card.Title>{newsData.title}</Card.Title>
             <Card.Text>{newsData.abstract}</Card.Text>
-          </Card.Body>
-          <Card.Footer className="d-flex flex-column ">
-            <small className="text-muted">{newsData.byline}</small>
-            <small className="text-muted">{newsData.published_date}</small>
-          </Card.Footer>
-        </Card.Link>
+          </Card.Link>
+        </Card.Body>
+        <Card.Footer className="d-flex flex-column ">
+          <small className="text-muted">{newsData.byline}</small>
+          <small className="text-muted">{newsData.published_date}</small>
+        </Card.Footer>
       </Card>
       // </Col>
     );
