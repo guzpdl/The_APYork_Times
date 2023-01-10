@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/The_APYork_Times/static/css/main.cadeb850.css",
-    "main.js": "/The_APYork_Times/static/js/main.2283b1b6.js",
+    "main.js": "/The_APYork_Times/static/js/main.2ad4ac65.js",
     "index.html": "/The_APYork_Times/index.html",
     "main.cadeb850.css.map": "/The_APYork_Times/static/css/main.cadeb850.css.map",
-    "main.2283b1b6.js.map": "/The_APYork_Times/static/js/main.2283b1b6.js.map"
+    "main.2ad4ac65.js.map": "/The_APYork_Times/static/js/main.2ad4ac65.js.map"
   },
   "entrypoints": [
     "static/css/main.cadeb850.css",
-    "static/js/main.2283b1b6.js"
+    "static/js/main.2ad4ac65.js"
   ]
 }
