@@ -26,7 +26,7 @@ const Article = () => {
     return (
       <Container className="m-3 square border-dark border-bottom " key={indx}>
         <Row>
-          <Col className="text-start">
+          <Col>
             <h3>{dataStory.title}</h3>
             <p>{dataStory.abstract}</p>
           </Col>

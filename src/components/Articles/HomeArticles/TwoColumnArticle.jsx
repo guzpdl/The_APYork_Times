@@ -15,7 +15,7 @@ const TwoColumnArticle1 = ({ popularStories }) => {
             alt={index}
             fluid
           />
-          <Figure.Caption className="text-start fw-bold">
+          <Figure.Caption className="fw-bold">
             {popularStory.title}
           </Figure.Caption>
         </Figure>

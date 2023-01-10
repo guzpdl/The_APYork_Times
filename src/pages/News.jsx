@@ -5,7 +5,7 @@ import NewsArticle from "../components/Articles/NewsArticles/NewsArticle";
 const News = () => {
   return (
     <Container>
-      <Row>
+      <Row className="d-flex justify-content-around">
         <NewsArticle />
       </Row>
     </Container>

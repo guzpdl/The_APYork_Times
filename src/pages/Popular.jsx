@@ -1,24 +1,48 @@
-import React, { useState } from "react";
-import { Container } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
+import { Container, Row } from "react-bootstrap";
 import PopularArticle from "../components/Articles/PopularArticles/PopularArticle";
 import PopularArticlesFilter from "../components/Articles/PopularArticles/PopularArticlesFilter";
+import MostPopularAxios from "../services/mostPopular.service";
 
 const Popular = () => {
-  const [filterDate, setFilterDate] = useState("");
-  const [filterPopularity, setfilterPopularity] = useState("");
+  const popularStoriesAxios = new MostPopularAxios();
+
+  const [filterDate, setFilterDate] = useState(1);
+  const [filterPopularity, setFilterPopularity] = useState("emailed");
+  const [responsePopular, setResponsePopular] = useState([]);
+
+  const defaultPrintPopular = () => {
+    popularStoriesAxios
+      .popularEmailedStories(filterDate)
+      .then((popularStoriesEmailed) => {
+        setResponsePopular(popularStoriesEmailed.results);
+      })
+      .catch((error) => console.log(error));
+  };
+
+  useEffect(() => {
+    defaultPrintPopular();
+  }, []);
 
   return (
     <Container>
-      <PopularArticlesFilter
-        filterDate={filterDate}
-        filterPopularity={filterPopularity}
-        setfilterPopularity={setfilterPopularity}
-        setFilterDate={setFilterDate}
-      />
-      <PopularArticle
-        filterDate={filterDate}
-        filterPopularity={filterPopularity}
-      />
+      <Row>
+        <PopularArticlesFilter
+          filterDate={filterDate}
+          filterPopularity={filterPopularity}
+          setFilterPopularity={setFilterPopularity}
+          setFilterDate={setFilterDate}
+          setResponsePopular={setResponsePopular}
+          popularStoriesAxios={popularStoriesAxios}
+        />
+      </Row>
+      <Row className="d-flex justify-content-around">
+        <PopularArticle
+          filterDate={filterDate}
+          filterPopularity={filterPopularity}
+          responsePopular={responsePopular}
+        />
+      </Row>
     </Container>
   );
 };
