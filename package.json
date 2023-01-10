@@ -19,6 +19,8 @@
   },
   "scripts": {
     "start": "react-dotenv && react-scripts start",
+    "predeploy" : "npm run build",
+"deploy" : "gh-pages -d build",
     "build": "react-dotenv && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -42,6 +44,11 @@
     ]
   },
   "react-dotenv": {
-    "whitelist": ["API_URL"]
+    "whitelist": [
+      "API_URL"
+    ]
+  },
+  "devDependencies": {
+    "gh-pages": "^4.0.0"
   }
 }
