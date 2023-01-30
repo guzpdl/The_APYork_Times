@@ -4,9 +4,12 @@ import { Card } from "react-bootstrap";
 const PopularArticle = ({ responsePopular }) => {
   return responsePopular.map((popularData, index) => {
     return (
-      // <Col lg={4} className="mt-3 d-flex justify-content-around" key={index}>
-      <Card className="my-2 p-0 " style={{ width: "24rem" }}>
-        <Card.Link href={popularData.url} style={{ textDecoration: "none" }}>
+      <Card key={index} className="my-2 p-0 " style={{ width: "24rem" }}>
+        <Card.Link
+          href={popularData.url}
+          style={{ textDecoration: "none" }}
+          target="_blank"
+        >
           <Card.Img
             variant="top"
             src={
@@ -19,6 +22,7 @@ const PopularArticle = ({ responsePopular }) => {
           <Card.Link
             href={popularData.url}
             style={{ textDecoration: "none", color: "black" }}
+            target="_blank"
           >
             <Card.Title>{popularData.title}</Card.Title>
             <Card.Text>{popularData.abstract}</Card.Text>
@@ -29,7 +33,6 @@ const PopularArticle = ({ responsePopular }) => {
           <small className="text-muted">{popularData.published_date}</small>
         </Card.Footer>
       </Card>
-      // </Col>
     );
   });
 };

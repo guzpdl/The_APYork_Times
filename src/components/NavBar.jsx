@@ -1,25 +1,58 @@
 import React from "react";
 import "./NavBar.css";
 import { Navbar, Nav, Container } from "react-bootstrap";
+import { useLocation } from "react-router-dom";
 
 const NavBar = () => {
+  const location = useLocation().pathname;
+
   return (
     <Container>
       <Navbar>
         <Nav className="m-auto">
-          <Nav.Link className="links px-3" href="/">
+          <Nav.Link
+            className="links px-3"
+            href="/"
+            style={{
+              fontWeight: location === "/" && "bold",
+            }}
+          >
             Home
           </Nav.Link>
-          <Nav.Link className="links px-3" href="/news">
+          <Nav.Link
+            className="links px-3"
+            href="/news"
+            style={{
+              fontWeight: location === "/news" && "bold",
+            }}
+          >
             News
           </Nav.Link>
-          <Nav.Link className="links px-3" href="/popular">
+          <Nav.Link
+            className="links px-3"
+            href="/popular"
+            style={{
+              fontWeight: location === "/popular" && "bold",
+            }}
+          >
             Popular Stories
           </Nav.Link>
-          <Nav.Link className="links px-3" href="/books">
+          <Nav.Link
+            className="links px-3"
+            href="/books"
+            style={{
+              fontWeight: location === "/books" && "bold",
+            }}
+          >
             Books
           </Nav.Link>
-          <Nav.Link className="links px-3" href="/movies">
+          <Nav.Link
+            className="links px-3"
+            href="/movies"
+            style={{
+              fontWeight: location === "/movies" && "bold",
+            }}
+          >
             Movies
           </Nav.Link>
         </Nav>

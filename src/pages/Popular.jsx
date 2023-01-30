@@ -9,6 +9,7 @@ const Popular = () => {
 
   const [filterDate, setFilterDate] = useState(1);
   const [filterPopularity, setFilterPopularity] = useState("emailed");
+
   const [responsePopular, setResponsePopular] = useState([]);
 
   const defaultPrintPopular = () => {
@@ -34,14 +35,11 @@ const Popular = () => {
           setFilterDate={setFilterDate}
           setResponsePopular={setResponsePopular}
           popularStoriesAxios={popularStoriesAxios}
+          responsePopular={responsePopular}
         />
       </Row>
       <Row className="d-flex justify-content-around">
-        <PopularArticle
-          filterDate={filterDate}
-          filterPopularity={filterPopularity}
-          responsePopular={responsePopular}
-        />
+        <PopularArticle responsePopular={responsePopular} />
       </Row>
     </Container>
   );

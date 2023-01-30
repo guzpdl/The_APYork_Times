@@ -1,4 +1,6 @@
 import React from "react";
+import { useEffect } from "react";
+import { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 
 const PopularArticlesFilter = ({
@@ -9,22 +11,32 @@ const PopularArticlesFilter = ({
   setResponsePopular,
   popularStoriesAxios,
 }) => {
+  const [titleChanges, setTitleChanges] = useState("emailed");
+  const [daysChanges, setDaysChanges] = useState(1);
+
   const submitSearch = (event) => {
+    setDaysChanges(+filterDate);
+
     event.preventDefault();
     if (filterPopularity === "emailed") {
+      setTitleChanges("emailed");
+
       popularStoriesAxios
         .popularEmailedStories(filterDate)
         .then((searchedData) => {
           setResponsePopular(searchedData.results);
         });
-    }
-    if (filterPopularity === "shared") {
+    } else if (filterPopularity === "shared") {
+      setTitleChanges("shared");
+
       popularStoriesAxios
         .popularSharedStories(filterDate)
         .then((searchedData) => {
           setResponsePopular(searchedData.results);
         });
-    } else {
+    } else if (filterPopularity === "viewed") {
+      setTitleChanges("viewed");
+
       popularStoriesAxios
         .popularViewedStories(filterDate)
         .then((searchedData) => {
@@ -34,7 +46,11 @@ const PopularArticlesFilter = ({
   };
 
   return (
-    <>
+    <div className="d-flex justify-content-between align-items-center px-4">
+      <h5>
+        Showing the most {titleChanges} stories in the last{" "}
+        {daysChanges === 1 ? "day" : daysChanges === 7 ? "7 days" : "30 days"}
+      </h5>
       <Form
         onSubmit={submitSearch}
         className="d-flex flex-row justify-content-end"
@@ -45,9 +61,7 @@ const PopularArticlesFilter = ({
             as="select"
             onChange={(e) => setFilterPopularity(e.target.value)}
           >
-            <option defaultValue={"emailed"} value={"emailed"}>
-              emailed articles
-            </option>
+            <option value={"emailed"}>emailed articles</option>
             <option value={"shared"}>shared articles</option>
             <option value={"viewed"}>viewed articles</option>
           </Form.Select>
@@ -58,9 +72,7 @@ const PopularArticlesFilter = ({
             as="select"
             onChange={(e) => setFilterDate(e.target.value)}
           >
-            <option defaultValue={1} value={1}>
-              1
-            </option>
+            <option value={1}>1</option>
             <option value={7}>7</option>
             <option value={30}>30</option>
           </Form.Select>
@@ -69,7 +81,7 @@ const PopularArticlesFilter = ({
           Search
         </Button>
       </Form>
-    </>
+    </div>
   );
 };
 

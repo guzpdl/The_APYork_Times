@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Col, Card } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 import TopStoriesAxios from "../../../services/topStories.service";
 
 const NewsArticle = () => {
@@ -23,7 +23,7 @@ const NewsArticle = () => {
     return (
       // <Col lg={4} className="mt-3 d-flex justify-content-around" key={index}>
       <Card className="my-2 p-0 " style={{ width: "24rem" }} key={index}>
-        <Card.Link href={newsData.url} style={{ textDecoration: "none" }}>
+        <Card.Link href={newsData.url} target="_blank">
           <Card.Img
             variant="top"
             src={newsData.multimedia?.[1].url || "/nytDefaultImg.jpg"}
@@ -32,6 +32,7 @@ const NewsArticle = () => {
         </Card.Link>
         <Card.Body style={{ color: "black" }}>
           <Card.Link
+            target="_blank"
             href={newsData.url}
             style={{ textDecoration: "none", color: "black" }}
           >
