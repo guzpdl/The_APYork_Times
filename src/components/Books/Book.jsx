@@ -10,7 +10,7 @@ const Book = ({ bookData }) => {
       <h6>{bookData?.list_name}</h6>
       {first5?.map((bookInfo, index) => {
         return (
-          <Col key={index}>
+          <Col key={index} className="square border-end border-start">
             <div
               style={{ width: "14rem", height: "28rem" }}
               className="m-1 d-flex flex-column justify-content-between"
