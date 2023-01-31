@@ -46,7 +46,7 @@ const PopularArticlesFilter = ({
   };
 
   return (
-    <div className="d-flex justify-content-between align-items-center px-4">
+    <div className="d-flex justify-content-between align-items-center mb-1 square border-bottom">
       <h5>
         Showing the most {titleChanges} stories in the last{" "}
         {daysChanges === 1 ? "day" : daysChanges === 7 ? "7 days" : "30 days"}
@@ -77,7 +77,7 @@ const PopularArticlesFilter = ({
             <option value={30}>30</option>
           </Form.Select>
         </Form.Group>
-        <Button variant="light" type="submit">
+        <Button variant="light" type="submit" className="mb-1">
           Search
         </Button>
       </Form>

@@ -2,7 +2,7 @@ import React from "react";
 import "./TwoColumnArticle.css";
 import { Col, Figure } from "react-bootstrap";
 
-const TwoColumnArticle1 = ({ popularStories }) => {
+const TwoColumnArticle = ({ popularStories }) => {
   return popularStories.map((popularStory, index) => {
     return (
       <Col lg={5} className="m-2 square border-bottom" key={index}>
@@ -33,4 +33,4 @@ const TwoColumnArticle1 = ({ popularStories }) => {
   });
 };
 
-export default TwoColumnArticle1;
+export default TwoColumnArticle;

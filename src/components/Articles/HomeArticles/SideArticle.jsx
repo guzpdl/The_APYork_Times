@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import MostPopularAxios from "../../../services/mostPopular.service";
 import { Container, Row } from "react-bootstrap";
-import TwoColumnArticle1 from "./TwoColumnArticle";
+import TwoColumnArticle from "./TwoColumnArticle";
 
 // Popular Articles from TNYT
 
@@ -25,7 +25,8 @@ const SideArticle = () => {
   return (
     <Container className="m-1 square border-start">
       <Row className="square border-start">
-        <TwoColumnArticle1 popularStories={popularStories} />
+        <h5 className="m-2 square border-bottom w-75">The most popular </h5>
+        <TwoColumnArticle popularStories={popularStories} />
       </Row>
     </Container>
   );

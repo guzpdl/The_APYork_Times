@@ -2,16 +2,16 @@ import InitAxios from "./initAxios.service";
 
 const NYT_API_KEYS = process.env.REACT_APP_NYT_API_KEYS;
 
-class TopStoriesAxios extends InitAxios {
+class BooksAxios extends InitAxios {
   constructor() {
-    super("topstories/v2/");
+    super("books/v3/");
   }
 
-  homeStories() {
+  booksByGenre(genre) {
     return this.axios
-      .get(`home.json?api-key=${NYT_API_KEYS}`)
+      .get(`lists/${genre}.json?api-key=${NYT_API_KEYS}`)
       .then((response) => response.data);
   }
 }
 
-export default TopStoriesAxios;
+export default BooksAxios;

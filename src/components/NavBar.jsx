@@ -1,7 +1,7 @@
 import React from "react";
 import "./NavBar.css";
 import { Navbar, Nav, Container } from "react-bootstrap";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 
 const NavBar = () => {
   const location = useLocation().pathname;
@@ -12,7 +12,8 @@ const NavBar = () => {
         <Nav className="m-auto">
           <Nav.Link
             className="links px-3"
-            href="/"
+            as={Link}
+            to="/"
             style={{
               fontWeight: location === "/" && "bold",
             }}
@@ -21,7 +22,8 @@ const NavBar = () => {
           </Nav.Link>
           <Nav.Link
             className="links px-3"
-            href="/news"
+            as={Link}
+            to="/news"
             style={{
               fontWeight: location === "/news" && "bold",
             }}
@@ -30,7 +32,8 @@ const NavBar = () => {
           </Nav.Link>
           <Nav.Link
             className="links px-3"
-            href="/popular"
+            as={Link}
+            to="/popular"
             style={{
               fontWeight: location === "/popular" && "bold",
             }}
@@ -39,7 +42,8 @@ const NavBar = () => {
           </Nav.Link>
           <Nav.Link
             className="links px-3"
-            href="/books"
+            as={Link}
+            to="/books"
             style={{
               fontWeight: location === "/books" && "bold",
             }}
@@ -48,7 +52,8 @@ const NavBar = () => {
           </Nav.Link>
           <Nav.Link
             className="links px-3"
-            href="/movies"
+            as={Link}
+            to="/movies"
             style={{
               fontWeight: location === "/movies" && "bold",
             }}
