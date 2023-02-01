@@ -7,10 +7,10 @@ const Book = ({ bookData }) => {
 
   return (
     <>
-      <h6>{bookData?.list_name}</h6>
+      <h6 className="ps-3">{bookData?.list_name}</h6>
       {first5?.map((bookInfo, index) => {
         return (
-          <Col key={index} className="square border-end border-start">
+          <Col key={index} className="square border-end border-start mb-4">
             <div
               style={{ width: "14rem", height: "28rem" }}
               className="m-1 d-flex flex-column justify-content-between"
@@ -41,12 +41,12 @@ const Book = ({ bookData }) => {
                 <p className="fst-italic">{bookInfo.contributor}</p>
                 <p>{bookInfo.description}</p>
               </div>
-              <div>
+              <div className="square border-bottom">
                 <a
                   target="_blank"
                   rel="noreferrer"
                   alt={index}
-                  className="btn btn-dark "
+                  className="btn btn-dark mb-2"
                   href={bookInfo.amazon_product_url}
                 >
                   BUY

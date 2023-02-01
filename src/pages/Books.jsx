@@ -24,7 +24,7 @@ const Books = () => {
   return (
     <Container>
       <Row>
-        <h5>Best sellers</h5>
+        <h5 className="p-4 ps-3 pb-0 square border-bottom">Best sellers</h5>
         <Book bookData={fictionBooks} />
       </Row>
     </Container>
