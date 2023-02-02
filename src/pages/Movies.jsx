@@ -1,10 +1,14 @@
 import React from "react";
+import { Container, Row } from "react-bootstrap";
+import Movie from "../components/Movies/Movie";
 
 const Movies = () => {
   return (
-    <div>
-      <h1>Movie</h1>
-    </div>
+    <Container>
+      <Row>
+        <Movie />
+      </Row>
+    </Container>
   );
 };
 
