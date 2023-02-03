@@ -41,7 +41,7 @@ const Article = () => {
             <a href={dataStory.url} target="_blank" rel="noreferrer">
               <Image
                 className="mb-3"
-                src={dataStory.multimedia[1].url}
+                src={dataStory?.multimedia?.[1].url || "/nytDefaultImg.jpg"}
                 alt={indx}
                 fluid
               />
