@@ -27,7 +27,6 @@ const NewsArticle = () => {
           <Card.Img
             variant="top"
             src={newsData.multimedia?.[1].url || "/nytDefaultImg.jpg"}
-            fluid
           />
         </Card.Link>
         <Card.Body style={{ color: "black" }}>
